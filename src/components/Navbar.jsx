@@ -7,10 +7,14 @@ export default function Navbar() {
   const navItems = [
     { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
-    { label: "Education", href: "#education" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
-    { label: "Certifications", href: "#certifications" }
+    { label: "Education", href: "#education" },
+    { label: "Certifications", href: "#certifications" },
+    { label: "Contact", href: "#contact" }
+    
+    
+    
+    
   ];
 
   return (
