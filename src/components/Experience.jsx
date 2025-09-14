@@ -1,5 +1,6 @@
-import { Briefcase } from "lucide-react";
+// src/components/Experience.jsx
 import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
@@ -7,53 +8,50 @@ const experiences = [
     company: "InvictIQ, London (Remote)",
     duration: "Sep 2022 – Dec 2023",
     details: [
-      "Partnered with UK healthcare and care-home clients to deliver analytics solutions for compliance, patient outcomes, and resource management.",
-      "Designed and maintained interactive dashboards (Power BI, Apache Superset) to track bed occupancy, staffing levels, and patient care metrics.",
-      "Automated ETL pipelines with Python & SQL, cutting reporting turnaround by 35% and ensuring on-time compliance submissions.",
-      "Built and deployed predictive ML models (Katonic MLOps) to forecast admissions and optimize staff allocation.",
-      "Delivered ad-hoc analyses for the UK Health Department, supporting data-driven policy improvements.",
-      "Explored Generative AI (LangChain, OpenAI) for automated reporting and efficient querying."
+      "Designed interactive dashboards using Apache Superset & Power BI for real-time KPIs across business verticals.",
+      "Built and optimized Python-based web scraping tools (BeautifulSoup, Selenium, Scrapy).",
+      "Developed ETL pipelines with Pandas, NumPy & SQL, cutting manual processing by 35%.",
+      "Automated workflows using Apache Airflow for timely data delivery.",
+      "Deployed & monitored ML models with Katonic MLOps Platform.",
+      "Explored Generative AI (OpenAI, LangChain) for multi-agent workflows and prompt optimization."
     ]
   }
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-6 bg-gray-900 text-gray-200">
+    <section id="experience" className="py-24 px-6 bg-gray-900 text-gray-200">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-heading font-bold text-center mb-16 text-teal-400">
           Experience
         </h2>
 
-        <div className="relative border-l-4 border-teal-600 pl-8">
+        <div className="relative border-l-2 border-teal-500">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="mb-12 bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-teal-500/30 transition"
+              transition={{ duration: 0.6 }}
+              className={`mb-12 ml-6 ${index % 2 === 0 ? "md:ml-12" : "md:ml-12 md:mr-12"}`}
             >
-              {/* Role + Company */}
-              <div className="flex items-center gap-3 mb-2">
-                <div className="bg-teal-500 text-white p-2 rounded-full shadow-md">
-                  <Briefcase size={18} />
-                </div>
-                <h3 className="text-2xl font-heading font-semibold text-white">
-                  {exp.role}
-                </h3>
+              {/* Dot icon */}
+              <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-teal-500 rounded-full shadow-md">
+                <Briefcase size={14} className="text-white" />
+              </span>
+
+              <div className="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-teal-500/30 transition">
+                <h3 className="text-2xl font-semibold text-white">{exp.role}</h3>
+                <p className="text-teal-400 font-medium">{exp.company}</p>
+                <p className="text-gray-400 text-sm mb-4">{exp.duration}</p>
+
+                <ul className="space-y-2 text-gray-300 list-disc list-inside">
+                  {exp.details.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
               </div>
-
-              <p className="text-teal-400 font-medium">{exp.company}</p>
-              <p className="text-gray-400 text-sm italic mb-4">{exp.duration}</p>
-
-              {/* Bulleted details */}
-              <ul className="list-disc list-inside space-y-2 text-gray-300 leading-relaxed">
-                {exp.details.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>
