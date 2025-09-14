@@ -8,19 +8,23 @@ import Education from "./components/Education";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop"; // 👈 import the button
 
 function App() {
   return (
     <div className="bg-white text-gray-900">
       <Navbar />
       <Hero />
-      <Experience />  
+      <Experience />
       <Skills />
       <Projects />
       <Education />
       <Certifications />
       <Contact />
       <Footer />
+
+      {/* Floating Back to Top Button */}
+      <BackToTop />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+// src/components/Projects.jsx
 import { motion } from "framer-motion";
 import { Code } from "lucide-react";
 
@@ -55,7 +56,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-teal-500/30 transform transition duration-300 hover:scale-105"
+              className="group bg-gray-800 p-6 rounded-2xl shadow-md transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/30"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="bg-teal-500 text-white p-2 rounded-full shadow-md">
@@ -71,8 +72,8 @@ export default function Projects() {
                 {proj.description}
               </p>
 
-              {/* Tech stack badges */}
-              <div className="flex flex-wrap gap-2">
+              {/* Tech stack badges - appear only on hover */}
+              <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition duration-500">
                 {proj.tech.map((t, i) => (
                   <span
                     key={i}
@@ -82,16 +83,6 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-
-              {/* Future GitHub/demo link */}
-              {/* <a
-                href="https://github.com/aswin/project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-teal-400 font-medium hover:underline"
-              >
-                View Code →
-              </a> */}
             </motion.div>
           ))}
         </div>

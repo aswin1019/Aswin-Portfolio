@@ -1,7 +1,12 @@
 @import "tailwindcss";
+
 @theme {
   --font-sans: "Oswald", sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: "Courier New", monospace;
+}
 
+/* 👇 Add this here */
+html {
+  scroll-behavior: smooth;
 }
