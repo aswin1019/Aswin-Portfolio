@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   return (
@@ -7,28 +8,34 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center text-center px-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-3xl"
-      >
+      <div className="max-w-3xl">
+        {/* Name */}
         <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
           <span className="text-teal-400">Aswin M</span>
         </h1>
 
+        {/* Animated Title */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-200 mb-6">
+          <span className="text-teal-400">
+            <Typewriter
+              words={["Data Analyst"]}
+              loop={false}
+              cursor={false}   // 🔹 no blinking cursor
+              typeSpeed={70}
+              deleteSpeed={0}
+            />
+          </span>
+        </h2>
+
+        {/* Summary */}
         <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-          Data Analyst with expertise in{" "}
-          <span className="text-teal-400 font-medium">Data Science</span>,{" "}
-          <span className="text-teal-400 font-medium">Generative AI</span>, and{" "}
-          <span className="text-teal-400 font-medium">Data Visualization</span>.
-          Experienced in building{" "}
-          <span className="font-medium">interactive dashboards</span>,{" "}
-          <span className="font-medium">scalable ETL pipelines</span>, and{" "}
-          <span className="font-medium">AI-powered solutions</span> that deliver
+          Data Analyst with expertise in Data Science, Generative AI, and Data
+          Visualization. Experienced in building interactive dashboards,
+          scalable ETL pipelines, and AI-powered solutions that deliver
           actionable insights and support business growth.
         </p>
 
+        {/* Buttons */}
         <div className="flex justify-center gap-4">
           <a
             href="#projects"
@@ -43,7 +50,7 @@ export default function Hero() {
             Contact Me
           </a>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
