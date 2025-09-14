@@ -1,4 +1,3 @@
-// src/components/Education.jsx
 import { motion } from "framer-motion";
 
 const education = [
@@ -17,9 +16,9 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 px-6 bg-gray-100">
+    <section id="education" className="py-24 px-6 bg-gray-900 text-gray-200">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-14 text-indigo-700">
+        <h2 className="text-4xl font-heading font-bold text-center mb-14 text-teal-400">
           Education
         </h2>
 
@@ -31,22 +30,20 @@ export default function Education() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
-              className="bg-white p-6 rounded-2xl shadow-lg flex items-start space-x-4 hover:shadow-2xl transition"
+              className="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-teal-500/30 transition"
             >
               {/* Icon */}
-              <div className="text-indigo-600 text-4xl">🎓</div>
+              <div className="text-teal-400 text-4xl mb-3">🎓</div>
 
               {/* Content */}
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900">
-                  {edu.degree}
-                </h3>
-                <p className="text-gray-700">{edu.institution}</p>
-                <p className="text-gray-500 text-sm">{edu.duration}</p>
-                {edu.grade && (
-                  <p className="mt-2 text-pink-500 font-medium">{edu.grade}</p>
-                )}
-              </div>
+              <h3 className="text-2xl font-heading font-semibold text-white">
+                {edu.degree}
+              </h3>
+              <p className="text-teal-400">{edu.institution}</p>
+              <p className="text-gray-400 text-sm">{edu.duration}</p>
+              {edu.grade && (
+                <p className="mt-2 text-teal-300 font-medium">{edu.grade}</p>
+              )}
             </motion.div>
           ))}
         </div>
@@ -54,4 +51,3 @@ export default function Education() {
     </section>
   );
 }
-

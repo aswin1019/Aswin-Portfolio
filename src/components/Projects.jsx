@@ -41,9 +41,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50">
+    <section id="projects" className="py-20 px-6 bg-gray-900 text-gray-200">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-heading font-bold text-center mb-16 text-indigo-700">
+        <h2 className="text-4xl font-heading font-bold text-center mb-16 text-teal-400">
           Projects
         </h2>
 
@@ -55,19 +55,19 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white p-6 rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+              className="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-teal-500/30 transform transition duration-300 hover:scale-105"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="bg-indigo-600 text-white p-2 rounded-full shadow-md">
+                <div className="bg-teal-500 text-white p-2 rounded-full shadow-md">
                   <Code size={18} />
                 </div>
-                <h3 className="text-2xl font-heading font-semibold text-gray-800">
+                <h3 className="text-2xl font-heading font-semibold text-white">
                   {proj.title}
                 </h3>
               </div>
 
-              <p className="text-gray-500 text-sm italic mb-3">{proj.date}</p>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-400 text-sm italic mb-3">{proj.date}</p>
+              <p className="text-gray-300 leading-relaxed mb-4">
                 {proj.description}
               </p>
 
@@ -76,7 +76,7 @@ export default function Projects() {
                 {proj.tech.map((t, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded-full"
+                    className="px-3 py-1 bg-teal-100/10 text-teal-400 text-xs font-medium rounded-full"
                   >
                     {t}
                   </span>
@@ -88,7 +88,7 @@ export default function Projects() {
                 href="https://github.com/aswin/project-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block text-indigo-600 font-medium hover:underline"
+                className="mt-4 inline-block text-teal-400 font-medium hover:underline"
               >
                 View Code →
               </a> */}
@@ -99,4 +99,3 @@ export default function Projects() {
     </section>
   );
 }
-

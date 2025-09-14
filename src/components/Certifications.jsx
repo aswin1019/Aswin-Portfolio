@@ -25,10 +25,7 @@ const certifications = [
     category: "Workshops",
     icon: <Award size={20} />,
     items: [
-      {
-        name: "Generative Adversarial Network (ATREYA'19)",
-        issuer: "Organised by NIT"
-      },
+      { name: "Generative Adversarial Network (ATREYA'19)", issuer: "Organised by NIT" },
       {
         name: "Technical Workshop on 3D Game Augmented Reality (DYUKSHA'20)",
         issuer: "Robosol & IIT Bombay"
@@ -39,9 +36,9 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-20 px-6 bg-gray-50">
+    <section id="certifications" className="py-20 px-6 bg-gray-900 text-gray-200">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-heading font-bold text-center mb-16 text-indigo-700">
+        <h2 className="text-4xl font-heading font-bold text-center mb-16 text-teal-400">
           Certifications
         </h2>
 
@@ -53,13 +50,13 @@ export default function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105"
+              className="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-teal-500/30 transform transition duration-300 hover:scale-105"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-indigo-600 text-white p-2 rounded-full shadow-md">
+                <div className="bg-teal-500 text-white p-2 rounded-full shadow-md">
                   {cat.icon}
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-gray-800">
+                <h3 className="text-xl font-heading font-semibold text-white">
                   {cat.category}
                 </h3>
               </div>
@@ -67,8 +64,8 @@ export default function Certifications() {
               <ul className="space-y-3">
                 {cat.items.map((cert, i) => (
                   <li key={i}>
-                    <p className="text-gray-800 font-medium">{cert.name}</p>
-                    <p className="text-gray-500 text-sm">{cert.issuer}</p>
+                    <p className="text-gray-200 font-medium">{cert.name}</p>
+                    <p className="text-gray-400 text-sm">{cert.issuer}</p>
                   </li>
                 ))}
               </ul>

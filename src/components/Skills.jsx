@@ -41,9 +41,9 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 bg-white">
+    <section id="skills" className="py-20 px-6 bg-gray-900 text-gray-200">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-heading font-bold text-center mb-16 text-indigo-700">
+        <h2 className="text-4xl font-heading font-bold text-center mb-16 text-teal-400">
           Skills
         </h2>
 
@@ -55,13 +55,13 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-xl transform transition duration-300 hover:scale-105"
+              className="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-teal-500/30 transform transition duration-300 hover:scale-105"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-indigo-600 text-white p-2 rounded-full shadow-md">
+                <div className="bg-teal-500 text-white p-2 rounded-full shadow-md">
                   {cat.icon}
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-gray-800">
+                <h3 className="text-xl font-heading font-semibold text-white">
                   {cat.title}
                 </h3>
               </div>
@@ -71,7 +71,7 @@ export default function Skills() {
                   <motion.span
                     key={i}
                     whileHover={{ scale: 1.1 }}
-                    className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium shadow-sm cursor-default"
+                    className="px-3 py-1 bg-teal-100/10 text-teal-400 rounded-full text-sm font-medium shadow-sm cursor-default"
                   >
                     {skill}
                   </motion.span>
