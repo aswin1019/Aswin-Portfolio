@@ -16,10 +16,17 @@ export default function Hero() {
         <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">
           <span className="text-teal-400">Aswin M</span>
         </h1>
+
         <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-          Data Analyst & Machine Learning Enthusiast passionate about delivering
-          AI-powered insights, automating data workflows, and driving digital
-          transformation.
+          Data Analyst with expertise in{" "}
+          <span className="text-teal-400 font-medium">Data Science</span>,{" "}
+          <span className="text-teal-400 font-medium">Generative AI</span>, and{" "}
+          <span className="text-teal-400 font-medium">Data Visualization</span>.
+          Experienced in building{" "}
+          <span className="font-medium">interactive dashboards</span>,{" "}
+          <span className="font-medium">scalable ETL pipelines</span>, and{" "}
+          <span className="font-medium">AI-powered solutions</span> that deliver
+          actionable insights and support business growth.
         </p>
 
         <div className="flex justify-center gap-4">
