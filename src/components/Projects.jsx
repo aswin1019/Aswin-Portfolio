@@ -4,6 +4,14 @@ import { Code } from "lucide-react";
 
 const projects = [
   {
+    title: "Generative BI Assistant",
+    date: "2025",
+    description:
+      "Developed an AI-powered BI Assistant using Streamlit and Groq LLaMA models. Enabled users to query data in natural language and get instant insights with charts. Supported CSV/Excel uploads, automated data cleaning, query history, and downloadable reports. Delivered interactive visualizations (bar, line, heatmap, etc.) for business decision-making.",
+    tech: ["Streamlit", "Groq LLaMA", "Python", "Pandas", "DataViz"],
+    link: "https://genai-bi-assistant.streamlit.app" // 🔗 Only this project has a link
+  },
+  {
     title: "Healthcare KPI Dashboard",
     date: "2023",
     description:
@@ -72,7 +80,7 @@ export default function Projects() {
                 {proj.description}
               </p>
 
-              {/* Tech stack badges - appear only on hover */}
+              {/* Tech stack badges */}
               <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition duration-500">
                 {proj.tech.map((t, i) => (
                   <span
@@ -83,6 +91,18 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+
+              {/* Show demo link only if available */}
+              {proj.link && (
+                <a
+                  href={proj.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-teal-400 font-medium hover:underline"
+                >
+                  View Demo →
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
